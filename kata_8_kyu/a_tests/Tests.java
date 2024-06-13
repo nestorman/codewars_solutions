@@ -17,16 +17,5 @@ isDigit("zero")
 
  */
 public class Tests {
-    public static String toAlternativeString(String string) {
-        StringBuilder stringBuilder = new StringBuilder(string.toUpperCase());
-        for(int i = 0; i < string.length(); i++){
-            if(stringBuilder.charAt(i) != string.charAt(i)){
-                stringBuilder.setCharAt(i,Character.toLowerCase(stringBuilder.charAt(i)));
-        }
-        return stringBuilder.toString();
-    }
 
-    public static void main(String[] args) {
-        replaceDots("one.two.three");
-    }
 }
