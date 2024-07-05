@@ -1,0 +1,35 @@
+package com.codewars.kata_8_kyu.solution_083;
+
+/*  Tip Calculator
+You need to consider the following ratings:
+
+Terrible: tip 0%
+Poor: tip 5%
+Good: tip 10%
+Great: tip 15%
+Excellent: tip 20%
+The rating is case insensitive (so "great" = "GREAT"). If an unrecognised rating is received, then you need to return:
+
+"Rating not recognised" in Javascript, Python and Ruby...
+...or null in Java
+...or -1 in C#
+Because you're a nice person, you always round up the tip, regardless of the service.
+ */
+public class Solution {
+    public static Integer calculateTip(double amount, String rating) {
+        switch (rating.toLowerCase()) {
+            case "terrible":
+                return 0;
+            case "poor":
+                return (int) Math.ceil(amount * 0.05);
+            case "good":
+                return (int) Math.ceil(amount * 0.1);
+            case "great":
+                return (int) Math.ceil(amount * 0.15);
+            case "excellent":
+                return (int) Math.ceil(amount * 0.2);
+            default:
+                return null;
+        }
+    }
+}
