@@ -1,5 +1,7 @@
 package com.codewars.kata_8_kyu.a_tests;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.util.Arrays;
 
 /*  Is it a number?
@@ -19,16 +21,24 @@ isDigit("zero")
 
  */
 public class Tests {
-    public static int[] pipeFix(int[] numbers) {
-        int[] resultArray = new int[numbers[numbers.length - 1] - numbers[0] + 1];
-        System.out.println(numbers[numbers.length - 1] - numbers[0] + 1);
-        for (int i = 0; i < resultArray.length; i++) {
-            resultArray[i] = numbers[0] + i;
+    public static int countSheeps(Boolean[] arrayOfSheeps) {
+        if (arrayOfSheeps == null) return 0;
+        int count = 0;
+        for (Boolean b : arrayOfSheeps) {
+            if (b != null && b) {
+                count++;
+            }
         }
-        return resultArray;
+        return count;
     }
 
     public static void main(String[] args) {
-        pipeFix(new int[]{6, 9});
+        Boolean[] array1 = {true, true, true, null,
+                true, false, true, false,
+                true, false, false, true,
+                true, true, true, true,
+                false, false, true, true};
+        countSheeps(array1);
     }
+
 }
