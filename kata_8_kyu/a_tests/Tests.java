@@ -21,24 +21,19 @@ isDigit("zero")
 
  */
 public class Tests {
-    public static int countSheeps(Boolean[] arrayOfSheeps) {
-        if (arrayOfSheeps == null) return 0;
-        int count = 0;
-        for (Boolean b : arrayOfSheeps) {
-            if (b != null && b) {
-                count++;
+    public static String fakeBin(String numberString) {
+        char [] array = numberString.toCharArray();
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] == '1') {
+                array[i] = '0';
             }
         }
-        return count;
+        System.out.println(Arrays.toString(array));
+        return Arrays.toString(array);
     }
 
     public static void main(String[] args) {
-        Boolean[] array1 = {true, true, true, null,
-                true, false, true, false,
-                true, false, false, true,
-                true, true, true, true,
-                false, false, true, true};
-        countSheeps(array1);
+            fakeBin("45385593107843568");
     }
 
 }
